@@ -109,7 +109,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "group(kube_pod_container_status_running{pod=~\"webapp.*\"}) by (pod,namespace)",
+          "expr": "group(kube_pod_container_status_running) by (pod,namespace)",
           "instant": false,
           "legendFormat": "{{namespace}} / {{pod}} ",
           "range": true,
@@ -206,7 +206,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "sum by (pod, namespace) (\n  rate(kube_pod_container_status_restarts_total{pod=~\"webapp.*\"}[10m])\n)",
+          "expr": "sum by (pod, namespace) (\n  rate(kube_pod_container_status_restarts_total[10m])\n)",
           "instant": false,
           "legendFormat": "{{namespace}} / {{pod}} ",
           "range": true,
@@ -303,7 +303,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "(rate(kube_pod_container_status_restarts_total{pod=~\"webapp.*\"}[30m]))*1000",
+          "expr": "(rate(kube_pod_container_status_restarts_total[30m]))*1000",
           "instant": false,
           "legendFormat": "{{namespace}} / {{pod}} ",
           "range": true,
