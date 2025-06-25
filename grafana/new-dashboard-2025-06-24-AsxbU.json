@@ -111,7 +111,7 @@
           "editorMode": "code",
           "expr": "group(kube_pod_container_status_running) by (pod,namespace)",
           "instant": false,
-          "legendFormat": "{{namespace}} / {{pod}} ",
+          "legendFormat": "{{namespace}} // {{pod}} ",
           "range": true,
           "refId": "A"
         }
